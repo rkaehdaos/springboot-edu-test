@@ -10,11 +10,11 @@ jobs:
       - name: '소스 checkout'
         uses: actions/checkout@master
 
-      - name: 'jdk21 setup'
+      - name: 'jdk25 setup'
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: '21'
+          java-version: '25'
           cache: 'gradle'
 
       - name: 'gradle test'

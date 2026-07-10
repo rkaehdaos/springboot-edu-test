@@ -18,10 +18,10 @@ jobs:
       - name: '소스 checkout'
         uses: actions/checkout@master
 
-      - name: 'graalvm jdk21 setup'
+      - name: 'graalvm jdk25 setup'
         uses: graalvm/setup-graalvm@v1
         with:
-          java-version: '21'
+          java-version: '25'
           distribution: 'graalvm'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           native-image-job-reports: 'true'

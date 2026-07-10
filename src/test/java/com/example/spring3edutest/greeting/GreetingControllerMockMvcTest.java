@@ -3,46 +3,37 @@ package com.example.spring3edutest.greeting;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
+import org.springframework.test.web.servlet.assertj.MockMvcTester;
 
-import static org.hamcrest.Matchers.isA;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.assertj.core.api.Assertions.assertThat;
 
-@ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = {GreetingController.class})
 @DisplayName("Greeting MockTest")
 @Slf4j
 class GreetingControllerMockMvcTest {
 
     @Autowired
-    protected MockMvc mockMvc;
+    protected MockMvcTester mockMvc;
 
     @Test
-    void greetingTest1() throws Exception {
+    void greetingTest1() {
         log.debug("test1");
-        mockMvc.perform(get("/greeting"))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("id", isA(Number.class)))
-                .andExpect(jsonPath("content").value("Hello, World!"))
-
-        ;
+        assertThat(mockMvc.get().uri("/greeting"))
+                .hasStatusOk()
+                .bodyJson()
+                .hasPathSatisfying("$.id", id -> assertThat(id).asNumber().isNotNull())
+                .extractingPath("$.content").isEqualTo("Hello, World!");
     }
 
     @Test
-    void greetingTest2() throws Exception {
+    void greetingTest2() {
         log.debug("test2");
-        mockMvc.perform(get("/greeting?name=test2"))
-                .andDo(print())
-                .andExpect(jsonPath("id", isA(Number.class)))
-                .andExpect(jsonPath("content").value("Hello, test2!"))
-        ;
+        assertThat(mockMvc.get().uri("/greeting").param("name", "test2"))
+                .hasStatusOk()
+                .bodyJson()
+                .hasPathSatisfying("$.id", id -> assertThat(id).asNumber().isNotNull())
+                .extractingPath("$.content").isEqualTo("Hello, test2!");
     }
 }

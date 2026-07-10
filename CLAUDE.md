@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Structure
 
-Spring Boot 3.5.16 애플리케이션 (Java 25)으로 교육용 테스트 프로젝트입니다.
+Spring Boot 4.1.0 애플리케이션 (Java 25)으로 교육용 테스트 프로젝트입니다.
 
 **Build system:**
 - Gradle Kotlin DSL (`build.gradle.kts`, `settings.gradle.kts`)
