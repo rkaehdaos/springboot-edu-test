@@ -6,7 +6,12 @@ plugins {
     alias(libs.plugins.spring.dependency.management)
     alias(libs.plugins.hibernate)
     alias(libs.plugins.graalvm.native)
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.spring)
 }
+
+// Spring Boot BOM이 관리하는 kotlin-stdlib 버전을 플러그인 버전에 맞춘다.
+extra["kotlin.version"] = libs.versions.kotlin.get()
 
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
@@ -14,6 +19,13 @@ version = "0.0.1-SNAPSHOT"
 java {
     toolchain { languageVersion = JavaLanguageVersion.of(25) }
     sourceCompatibility = JavaVersion.VERSION_25
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_25
+        freeCompilerArgs.add("-Xjsr305=strict")
+    }
 }
 
 configurations {
