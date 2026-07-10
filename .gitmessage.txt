@@ -1,8 +1,7 @@
-# <type>(<scope>): <subject> [JIRA-XXX][GitHub Issue number]
+# <type>(<scope>): <subject>
 # |<----    최대 50자 사용 맞추려고 노력하기       ---->|
 # <body>
 # |<----               각 줄을 최대 72자로 제한해야 한다.                ---->|
-# [JIRA-XXX][GitHub Issue number]
 # <footer>
 # 
 # --- COMMIT END ---
@@ -52,13 +51,10 @@
 #    2. 어떻게(How)보다 무엇을(What), 왜(Why) 설명
 #    3. 변경 이유와 이전과의 차이점 설명
 #    4. 현재 시제 사용
-#    5. JIRA: 연동된 JIRA 티켓이 있을 경우 ref되도록 추가.
-#    6. Github Issue: 연동된 깃허브 이슈 존재시 ref되도록 추가. 
-        close, reslove등의 키워드는 PR 생성시에만 사용할 것.
+
 # --------------------
 # Footer Rules:
 #    중대한 변경 사항: <중대한 변경 사항 설명>
-#    Closes: #<GitHub issue-number>
 #    See also: #<issue-number>, #<issue-number>
-#    Co-authored-by: Name <kai.ahn@businesson.co.kr>
-#    Refs: [JIRA-XXX]
+#    Co-authored-by: Kai Ahn <13996827+rkaehdaos@users.noreply.github.com>
+#    Refs: [JIRA-XXX] #<GitHub issue-number>
