@@ -1,0 +1,99 @@
+[versions]
+spring-boot = "4.1.0"
+spring-dependency-management = "1.1.7"
+hibernate = "7.4.3.Final"
+graalvm-buildtools = "1.1.3"
+spring-boot-admin = "4.1.1"
+spring-modulith = "2.1.0"
+pmd = "7.24.0"
+kotlin = "2.4.0"
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }
+hibernate = { id = "org.hibernate.orm", version.ref = "hibernate" }
+graalvm-native = { id = "org.graalvm.buildtools.native", version.ref = "graalvm-buildtools" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+
+# 라이브러리 버전은 Spring Boot BOM(io.spring.dependency-management)이 관리하므로
+# 좌표(module)만 선언하고 version은 생략한다.
+[libraries]
+# --- Spring Boot Starters ---
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-starter-batch = { module = "org.springframework.boot:spring-boot-starter-batch" }
+spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+spring-boot-starter-data-ldap = { module = "org.springframework.boot:spring-boot-starter-data-ldap" }
+spring-boot-starter-data-redis = { module = "org.springframework.boot:spring-boot-starter-data-redis" }
+spring-boot-starter-graphql = { module = "org.springframework.boot:spring-boot-starter-graphql" }
+spring-boot-starter-hateoas = { module = "org.springframework.boot:spring-boot-starter-hateoas" }
+spring-boot-starter-jdbc = { module = "org.springframework.boot:spring-boot-starter-jdbc" }
+spring-boot-starter-oauth2-authorization-server = { module = "org.springframework.boot:spring-boot-starter-oauth2-authorization-server" }
+spring-boot-starter-oauth2-resource-server = { module = "org.springframework.boot:spring-boot-starter-oauth2-resource-server" }
+spring-boot-starter-security = { module = "org.springframework.boot:spring-boot-starter-security" }
+spring-boot-starter-thymeleaf = { module = "org.springframework.boot:spring-boot-starter-thymeleaf" }
+# Spring Boot 4 모듈화: spring-boot-starter-web → spring-boot-starter-webmvc 로 rename
+spring-boot-starter-webmvc = { module = "org.springframework.boot:spring-boot-starter-webmvc" }
+spring-boot-starter-web-services = { module = "org.springframework.boot:spring-boot-starter-web-services" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+# Spring Boot 4: @WebMvcTest 슬라이스·MockMvcTester·RestTestClient 는 별도 companion 테스트 스타터로 분리됨
+spring-boot-starter-webmvc-test = { module = "org.springframework.boot:spring-boot-starter-webmvc-test" }
+spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools" }
+spring-boot-docker-compose = { module = "org.springframework.boot:spring-boot-docker-compose" }
+spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor" }
+spring-boot-testcontainers = { module = "org.springframework.boot:spring-boot-testcontainers" }
+
+# --- Spring Boot Admin (codecentric) ---
+spring-boot-admin-starter-client = { module = "de.codecentric:spring-boot-admin-starter-client" }
+spring-boot-admin-starter-server = { module = "de.codecentric:spring-boot-admin-starter-server" }
+
+# --- Spring Kafka / Data / Web / Batch / GraphQL / Security ---
+spring-kafka = { module = "org.springframework.kafka:spring-kafka" }
+spring-kafka-test = { module = "org.springframework.kafka:spring-kafka-test" }
+spring-data-rest-hal-explorer = { module = "org.springframework.data:spring-data-rest-hal-explorer" }
+spring-webflux = { module = "org.springframework:spring-webflux" }
+spring-batch-test = { module = "org.springframework.batch:spring-batch-test" }
+spring-graphql-test = { module = "org.springframework.graphql:spring-graphql-test" }
+spring-security-test = { module = "org.springframework.security:spring-security-test" }
+
+# --- Spring Modulith ---
+spring-modulith-starter-core = { module = "org.springframework.modulith:spring-modulith-starter-core" }
+spring-modulith-starter-jpa = { module = "org.springframework.modulith:spring-modulith-starter-jpa" }
+spring-modulith-starter-test = { module = "org.springframework.modulith:spring-modulith-starter-test" }
+spring-modulith-actuator = { module = "org.springframework.modulith:spring-modulith-actuator" }
+spring-modulith-observability = { module = "org.springframework.modulith:spring-modulith-observability" }
+
+# --- Micrometer ---
+micrometer-tracing-bridge-brave = { module = "io.micrometer:micrometer-tracing-bridge-brave" }
+micrometer-registry-datadog = { module = "io.micrometer:micrometer-registry-datadog" }
+micrometer-registry-prometheus = { module = "io.micrometer:micrometer-registry-prometheus" }
+
+# --- Thymeleaf extras ---
+thymeleaf-extras-springsecurity6 = { module = "org.thymeleaf.extras:thymeleaf-extras-springsecurity6" }
+
+# --- Lombok ---
+lombok = { module = "org.projectlombok:lombok" }
+
+# --- Database drivers ---
+h2 = { module = "com.h2database:h2" }
+mysql-connector-j = { module = "com.mysql:mysql-connector-j" }
+postgresql = { module = "org.postgresql:postgresql" }
+
+# --- LDAP ---
+unboundid-ldapsdk = { module = "com.unboundid:unboundid-ldapsdk" }
+
+# --- Testcontainers ---
+# Testcontainers 2.0(Spring Boot 4가 관리)에서 아티팩트 좌표가 `testcontainers-` 접두사로 변경됨
+testcontainers-junit-jupiter = { module = "org.testcontainers:testcontainers-junit-jupiter" }
+testcontainers-kafka = { module = "org.testcontainers:testcontainers-kafka" }
+testcontainers-mysql = { module = "org.testcontainers:testcontainers-mysql" }
+testcontainers-postgresql = { module = "org.testcontainers:testcontainers-postgresql" }
+
+[bundles]
+# 항상 함께 사용하는 Testcontainers 모듈 묶음
+testcontainers = [
+    "testcontainers-junit-jupiter",
+    "testcontainers-kafka",
+    "testcontainers-mysql",
+    "testcontainers-postgresql",
+]

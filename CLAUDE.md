@@ -4,11 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Structure
 
-Spring Boot 3.5.5 애플리케이션 (Java 21)으로 교육용 테스트 프로젝트입니다. 
+Spring Boot 4.1.0 애플리케이션 (Java 25)으로 교육용 테스트 프로젝트입니다.
+
+**Build system:**
+- Gradle Kotlin DSL (`build.gradle.kts`, `settings.gradle.kts`)
+- Version Catalog로 플러그인/의존성 버전 중앙 관리 (`gradle/libs.versions.toml`)
+- 라이브러리 버전은 Spring Boot BOM(`io.spring.dependency-management`)이 관리하므로 카탈로그에는 좌표만 선언
 
 **Main packages:**
-- `com.example.spring3edutest` - 메인 애플리케이션 패키지
-- `com.example.spring3edutest.greeting` - 인사말 관련 컨트롤러와 모델
+- `com.example.springedutest` - 메인 애플리케이션 패키지
+- `com.example.springedutest.greeting` - 인사말 관련 컨트롤러와 모델
 
 ## Build Commands
 

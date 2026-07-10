@@ -1,4 +1,4 @@
-package com.example.spring3edutest.greeting;
+package com.example.springedutest.greeting;
 
 
 import lombok.extern.slf4j.Slf4j;

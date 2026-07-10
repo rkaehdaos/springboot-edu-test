@@ -1,18 +1,16 @@
-package com.example.spring3edutest;
+package com.example.springedutest;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.core.ApplicationContext;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @Slf4j
-class Spring3EduTestApplicationTests {
+class SpringEduTestApplicationTests {
     @Test
     void contextLoads() {
         log.info("Just Test");
         log.info("그리고 한글 테스트");
-//        Spring3EduTestApplication.main(new String[]{});
+//        SpringEduTestApplication.main(new String[]{});
     }
 }
