@@ -130,6 +130,13 @@ tasks.named('pmdTest') {
     excludes = ['**/*']
 }
 
+// Spring Boot AOT 자동 생성 소스(build/generated/aotSources 등)는
+// 프레임워크가 생성한 빌드 산출물이므로 PMD 분석 대상에서 제외한다.
+// 태스크가 존재하지 않아도 안전하도록 matching 사용.
+tasks.matching { it.name in ['pmdAot', 'pmdAotTest'] }.configureEach {
+    enabled = false
+}
+
 tasks.named('test') {
     dependsOn pmdMain
     useJUnitPlatform()
