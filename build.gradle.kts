@@ -130,6 +130,9 @@ tasks.matching { it.name in listOf("pmdAot", "pmdAotTest") }.configureEach {
 tasks.named<Test>("test") {
     dependsOn("pmdMain")
     useJUnitPlatform()
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
     maxParallelForks = Runtime.getRuntime().availableProcessors()
     finalizedBy(tasks.named("jacocoTestCoverageVerification"))
 }
