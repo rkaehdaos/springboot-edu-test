@@ -184,7 +184,7 @@ tasks.jacocoTestCoverageVerification {
         rule {
             isEnabled = false // rule 비활성화 -> 해당 룰이 적용되지 않음
             element = "CLASS"
-            includes = listOf("com.example.spring3edutest.*") //해당 패키지의 CLASS에 룰 적용
+            includes = listOf("com.example.springedutest.*") //해당 패키지의 CLASS에 룰 적용
 
             limit {
                 counter = "Line"

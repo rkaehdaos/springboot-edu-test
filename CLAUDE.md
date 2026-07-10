@@ -12,8 +12,8 @@ Spring Boot 4.1.0 애플리케이션 (Java 25)으로 교육용 테스트 프로�
 - 라이브러리 버전은 Spring Boot BOM(`io.spring.dependency-management`)이 관리하므로 카탈로그에는 좌표만 선언
 
 **Main packages:**
-- `com.example.spring3edutest` - 메인 애플리케이션 패키지
-- `com.example.spring3edutest.greeting` - 인사말 관련 컨트롤러와 모델
+- `com.example.springedutest` - 메인 애플리케이션 패키지
+- `com.example.springedutest.greeting` - 인사말 관련 컨트롤러와 모델
 
 ## Build Commands
 

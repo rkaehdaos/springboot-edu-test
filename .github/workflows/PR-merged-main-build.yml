@@ -108,8 +108,8 @@ jobs:
       - name: Upload binary
         uses: actions/upload-artifact@v4
         with:
-          name: spring3-edu-test-${{ steps.get_version.outputs.version }}-${{ matrix.os }}
-          path: build/native/nativeCompile/spring3-edu-test*
+          name: spring-edu-test-${{ steps.get_version.outputs.version }}-${{ matrix.os }}
+          path: build/native/nativeCompile/spring-edu-test*
 
       - name: Notification
         uses: 8398a7/action-slack@v3
@@ -150,17 +150,17 @@ jobs:
 #      - name: Download artifact (Ubuntu)
 #        uses: actions/download-artifact@v2
 #        with:
-#          name: spring3-edu-test-ubuntu-latest
+#          name: spring-edu-test-ubuntu-latest
 #
 #      - name: Download artifact (Windows)
 #        uses: actions/download-artifact@v2
 #        with:
-#          name: spring3-edu-test-windows-latest
+#          name: spring-edu-test-windows-latest
 #
 #      - name: Download artifact (Windows)
 #        uses: actions/download-artifact@v2
 #        with:
-#          name: spring3-edu-test-windows-latest
+#          name: spring-edu-test-windows-latest
 #
 #
 #      - name: Upload release asset

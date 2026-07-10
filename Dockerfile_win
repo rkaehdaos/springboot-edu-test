@@ -1,4 +1,4 @@
 # 윈도우 기반 Dockerfile 예시
 FROM mcr.microsoft.com/windows/nanoserver:1809
-COPY build/native/nativeTestCompile/spring3-edu-test-tests.exe /
-CMD ["spring3-edu-test-tests.exe"]
+COPY build/native/nativeTestCompile/spring-edu-test-tests.exe /
+CMD ["spring-edu-test-tests.exe"]
