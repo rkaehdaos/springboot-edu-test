@@ -18,7 +18,6 @@ version = "0.0.1-SNAPSHOT"
 
 java {
     toolchain { languageVersion = JavaLanguageVersion.of(25) }
-    sourceCompatibility = JavaVersion.VERSION_25
 }
 
 kotlin {
@@ -107,9 +106,6 @@ dependencyManagement {
 // - lazy task 구성 : 실제 실행되거나 다른 task에 의해 실제로 참조 될 때까지 구성 연기
 // - 빌드 성능 향상 가능, task  의존성 복잡한 대규모 유리
 
-tasks.named("compileJava") {
-    dependsOn(tasks.clean)
-}
 tasks.withType<JavaCompile> {
     options.compilerArgs.add("-Xlint:deprecation")
 }
